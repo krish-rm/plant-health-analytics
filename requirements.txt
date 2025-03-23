@@ -1,0 +1,7 @@
+dash
+pandas
+plotly
+google-cloud-bigquery
+google-cloud-bigquery-storage
+gunicorn
+db-dtypes
