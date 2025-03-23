@@ -68,6 +68,7 @@ gcloud run services describe plant-dashboard --region=us-central1 --format='valu
 
 or visit the URL displayed in the Cloud Build logs.
 
+
 ### 5️⃣ **Ensure Public Access to Cloud Run**
 If Cloud Run is not accessible publicly, grant permissions:
 
@@ -76,5 +77,5 @@ gcloud beta run services add-iam-policy-binding --region=us-central1 --member=al
 ```
 
 ### ✅ **Deployment Complete!** 🚀
-Your **Plant Health Dashboard** is now live and updates automatically with new sensor data!
+Your **Plant Health Dashboard** is now live at https://plant-health-dashboard-703716144022.us-central1.run.app/ and updates automatically with new sensor data!
 
