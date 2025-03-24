@@ -24,6 +24,8 @@ This project aims to develop an end-to-end data pipeline that enables efficient 
 - **Monitoring & Logging** → Cloud Logging, Cloud Monitoring
 - **Infrastructure as Code** (Optional) → Terraform
 
+For detailed tech stack information, refer to [Tech Stack](docs/tech_stack.md).
+
 ## **Deployment Instructions**
 For detailed deployment steps, refer to [Deployment Guide](docs/deployment_guide.md).
 
