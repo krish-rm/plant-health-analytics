@@ -1,15 +1,13 @@
 # 🚀 Deployment Guide for Plant Health Dashboard
 
-## 🌱 Background: Data & Weekly Processing
-The Plant Health Dashboard processes environmental sensor data collected weekly (e.g., Week 46, 47, …). This data is stored in **Google Cloud Storage (GCS)**, where it is ingested, cleaned, and transformed before being loaded into **BigQuery**. The **Airflow DAG** automates this batch processing, ensuring that the dashboard reflects up-to-date plant health insights.
+The Plant Health Dashboard processes plant health environmental sensor data collected four times (morning, afternoon, evening, night) daily. and weekly . This data is stored in **Google Cloud Storage (GCS)**, where it is ingested, cleaned, and transformed for weekly analysis (e.g., Week 46, 47, …), before being loaded into **BigQuery**. The **Airflow DAG** automates this batch processing, ensuring that the dashboard reflects up-to-date plant health insights.
+
 
 ## Final Automated Workflow
 ✅ **Airflow DAG** processes new sensor data (Week 46, 47, …),
-   cleans it, and loads it into **BigQuery**.
-
+   cleans it, and loads it into **BigQuery**.  
 ✅ **Dockerized App** fetches data from **BigQuery**
-   and is deployed to **Cloud Run** for public access.
-
+   and is deployed to **Cloud Run** for public access.  
 ✅ **Cloud Build** automates the build and redeployment process,
    ensuring seamless updates.
 

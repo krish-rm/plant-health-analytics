@@ -11,10 +11,12 @@ This project aims to develop an end-to-end data pipeline that enables efficient 
 ✅ **Airflow Orchestration** → **Cloud Composer (Airflow)** manages scheduled data workflows.
 
 ## **Project Workflow**
-1️⃣ **Ingestion** → Collects weekly sensor data (CSV) and stores it in **GCS**.  
+1️⃣ **Ingestion** → Collects daily sensor data (CSV) and stores it in **GCS**.  
 2️⃣ **Processing** → Cleans, transforms, and loads structured data into **BigQuery**.  
 3️⃣ **Visualization** → The **Dash-based dashboard** fetches data from **BigQuery**.  
 4️⃣ **Deployment** → Uses **Cloud Run** for public access and **Cloud Build** for CI/CD.
+
+For detailed architectural understanding, refer to [Architecture](docs/architecture.md).
 
 ## **Tech Stack**
 - **Data Processing** → Pandas, PyArrow, BigQuery
