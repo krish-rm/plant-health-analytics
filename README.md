@@ -36,5 +36,5 @@ For detailed deployment steps, refer to [Deployment Guide](docs/deployment_guide
 ✔️ **Machine Learning Integration** → Predict plant health trends using **Vertex AI**.  
 ✔️ **Enhanced Security** → Implement **API Gateway & IAP** for secure access.
 
-🚀 **This project provides a scalable and automated system for plant health monitoring using cloud-based data analytics and visualization.**
+**This project provides a scalable and automated system for plant health monitoring using cloud-based data analytics and visualization.**
 
