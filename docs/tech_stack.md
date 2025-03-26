@@ -5,7 +5,7 @@
 The project ingests environmental sensor data in **CSV format**, processes it, and loads it into **BigQuery**.  
 
 - **DATA LAKE: Google Cloud Storage (GCS)** → Stores raw and processed data.  
-- **Pandas & PyArrow** → Data processing, cleaning, and transformation.  
+- **ETL: Pandas & PyArrow** → Data processing, cleaning, and transformation.  
 - **DATA WAREHOUSE: BigQuery** → Stores structured plant health data for analysis.  
 - **WORKFLOW ORCHESTRATION: Apache Airflow (Cloud Composer)** → Orchestrates ingestion, cleaning, and loading tasks.  
 
@@ -31,7 +31,7 @@ The project follows a **CI/CD pipeline** to automate deployment.
 
 ---
 
-## **4️⃣ Infrastructure as Code (Optional)**  
+## **4️⃣ Infrastructure as Code**  
 To automate cloud resource provisioning.  
 
 - **Terraform** → Defines and provisions GCP resources (e.g., storage, IAM, Cloud Run).  
@@ -49,6 +49,10 @@ Ensures smooth operation and debugging.
 ## **6️⃣ Version Control & Collaboration**  
 - **GitHub** → Stores and manages project source code.  
 - **GitHub Actions (Future Scope)** → Can be integrated for CI/CD automation.  
+
+<p align="center">
+  <img src="github_ci_cd.png" alt="GitHub Actions (Future Scope)" width="600">
+</p>
 
 ---
 

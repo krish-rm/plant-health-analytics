@@ -29,10 +29,10 @@ This architecture outlines the end-to-end data flow from **IoT sensors** to the 
 - The dashboard is built using **Dash (Plotly)** and fetches data **directly from BigQuery**.
 - Key visualizations:
   - **Plant Health Distribution**: Pie chart showing healthy vs. stressed plants.
-  - **Environmental Factors Over Time**: Line/bar charts showing trends in temperature, humidity, and soil conditions.
+  - **Environmental Factors Affecting each Plant**: Bar chart showing temperature, humidity, soil conditions and other environmental factors for each plant.
 - Interactive elements:
-  - **Time Period Filter**: Users can select a week or month.
-  - **Plant Selection**: View data for specific plants.
+  - **Time Period Filter**: Users can select a particular week. 
+  - **Plant Selection**: Users can select specific plants.
 
 ---
 
@@ -46,7 +46,7 @@ This architecture outlines the end-to-end data flow from **IoT sensors** to the 
 ---
 
 ### **5️⃣ Automation & Scalability**
-- **Airflow DAGs run on a schedule**, ensuring **weekly data updates**.
+- **Airflow DAGs run on a schedule (say, daily run)**, and dashboard is optimized for weekly viewing.
 - The **Cloud Run service scales automatically** based on incoming user requests.
 - Future scalability:
   - Can integrate **real-time streaming (Pub/Sub, Dataflow)** for instant sensor updates.

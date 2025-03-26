@@ -1,6 +1,6 @@
 # 🚀 Deployment Guide for Plant Health Dashboard
 
-The Plant Health Dashboard processes plant health environmental sensor data collected four times (morning, afternoon, evening, night) daily. and weekly . This data is stored in **Google Cloud Storage (GCS)**, where it is ingested, cleaned, and transformed for weekly analysis (e.g., Week 46, 47, …), before being loaded into **BigQuery**. The **Airflow DAG** automates this batch processing, ensuring that the dashboard reflects up-to-date plant health insights.
+The Plant Health Dashboard processes plant health environmental sensor data collected four times (morning, afternoon, evening, night) daily. This data is stored in **Google Cloud Storage (GCS)**, where it is ingested, cleaned, and transformed for weekly analysis (e.g., Week 46, 47, …), before being loaded into **BigQuery**. The **Airflow DAG** automates this batch processing, ensuring that the dashboard reflects up-to-date plant health insights.
 
 
 ## Final Automated Workflow
@@ -17,8 +17,8 @@ The Plant Health Dashboard processes plant health environmental sensor data coll
 Before deploying, ensure the following are set up:  
 
 - **Google Cloud SDK** installed and authenticated (`gcloud auth login`).  
-- **Google Cloud Project** (`plant-454208`) is active (`gcloud config set project plant-454208`).  
-- **Cloud Storage Bucket** (`gs://plant-ai-bucket-454208`) created for raw and processed data.  
+- **Google Cloud Project** (`plant-123456`) is active (`gcloud config set project plant-123456`).  
+- **Cloud Storage Bucket** (`gs://plant-bucket-123456`) created for raw and processed data.  
 - **BigQuery Dataset** exists to store processed data.  
 - **Cloud Composer (Airflow) environment** is set up for DAG execution.  
 - **Cloud Composer, Cloud Run and Cloud Build APIs** are enabled:  
@@ -36,7 +36,7 @@ Run the following command to trigger the ETL process using Airflow DAG:
 
 ```sh
 gcloud auth login
-gcloud config set project plant-454208
+gcloud config set project plant-123456
 gcloud composer environments run plant-composer-env --location us-central1 dags trigger -- plant_ai_pipeline
 ```
 
@@ -44,9 +44,9 @@ gcloud composer environments run plant-composer-env --location us-central1 dags 
 Before deploying, ensure that the **service account** has the necessary permissions.
 
 ```sh
-gcloud projects add-iam-policy-binding plant-454208 --member=serviceAccount:plant-service-account@plant-454208.iam.gserviceaccount.com --role=roles/storage.admin && \
-gcloud projects add-iam-policy-binding plant-454208 --member=serviceAccount:plant-service-account@plant-454208.iam.gserviceaccount.com --role=roles/artifactregistry.writer && \
-gcloud projects add-iam-policy-binding plant-454208 --member=serviceAccount:plant-service-account@plant-454208.iam.gserviceaccount.com --role=roles/run.admin && \
+gcloud projects add-iam-policy-binding plant-123456 --member=serviceAccount:plant-service-account@plant-123456.iam.gserviceaccount.com --role=roles/storage.admin && \
+gcloud projects add-iam-policy-binding plant-123456 --member=serviceAccount:plant-service-account@plant-123456.iam.gserviceaccount.com --role=roles/artifactregistry.writer && \
+gcloud projects add-iam-policy-binding plant-123456 --member=serviceAccount:plant-service-account@plant-123456.iam.gserviceaccount.com --role=roles/run.admin && \
 ```
 
 ### 3️⃣ **Trigger Cloud Build for Automated Deployment**
