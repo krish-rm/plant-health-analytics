@@ -24,7 +24,7 @@ For detailed architectural understanding, refer to [Architecture](docs/architect
 - **Web Dashboard** → Dash (Plotly), Flask
 - **Deployment** → Cloud Run, Docker, Cloud Build, IAM
 - **Monitoring & Logging** → Cloud Logging, Cloud Monitoring
-- **Infrastructure as Code** (Optional) → Terraform
+- **Infrastructure as Code** → Terraform
 
 For detailed tech stack information, refer to [Tech Stack](docs/tech_stack.md).
 
