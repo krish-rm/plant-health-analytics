@@ -3,6 +3,11 @@
 ## **Overview**
 This project aims to develop an end-to-end data pipeline that enables efficient monitoring of plant health using IoT sensor data, AI/ML analytics, and a web-based dashboard for visualization. The system automates data ingestion, processing, and deployment to provide real-time insights into plant health and environmental factors.
 
+<p align="center">
+  <img src="docs/dashboard_0.png" alt="" width="800">
+</p>
+
+
 ## **Key Features**
 ✅ **Automated Data Pipeline** → Ingests, cleans, and transforms plant health data.  
 ✅ **Cloud-Based Storage & Processing** → Utilizes **Google Cloud Storage (GCS)** and **BigQuery**.  

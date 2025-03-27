@@ -75,6 +75,16 @@
   - Both tiles are functional and display meaningful data.
   - Dropdown filters (time period & plant health status) work as expected.
 
+  <p align="center">
+    <img src="dashboard_1.png" alt="" width="800">
+  </p>
+  
+
+  <p align="center">
+    <img src="dashboard_2.png" alt="" width="800">
+  </p>
+  
+
 ### **7. Reproducibility**
 - Follow the provided **setup instructions** in the documentation.
 - Deploy the pipeline and confirm that it works end-to-end.
