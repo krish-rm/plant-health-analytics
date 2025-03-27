@@ -1,7 +1,10 @@
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.models import Variable
-from datetime import datetime
+from datetime import datetime, timedelta
+
+# Get the current date and set start_date to today
+current_date = datetime.today()
 
 # Load environment variables from Airflow Variables
 GCS_BUCKET_NAME = Variable.get("GCS_BUCKET_NAME")
@@ -11,7 +14,7 @@ BQ_PROJECT_ID = Variable.get("GCP_PROJECT_ID")
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
-    "start_date": datetime(2025, 3, 22),
+    'start_date': current_date,  # Start from the current date
     "retries": 1,
 }
 
@@ -19,7 +22,7 @@ default_args = {
 with DAG(
     "plant_ai_pipeline",
     default_args=default_args,
-    schedule_interval=None,
+    schedule_interval=None, # Set schedule_interval='@daily' for daily build
     catchup=False,
 ) as dag:
     

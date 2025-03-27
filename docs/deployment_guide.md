@@ -26,6 +26,54 @@ Before deploying, ensure the following are set up:
   ```sh
   gcloud services enable run.googleapis.com cloudbuild.googleapis.com composer.googleapis.com
   ```  
+- **(Optional) Terraform for Automated Provisioning**
+Instead of manually creating GCP resources, Terraform can automate this:
+
+  ```sh
+   cd terraform
+   terraform init
+   terraform apply -auto-approve
+  ``` 
+
+## Choose from day, week, month for analysis, partition accordingly and apply transformation for optimization and cost effectiveness
+
+### 1️⃣ Partitioning BigQuery Table
+
+- Partition by `DATE(timestamp_column)` for daily partitions. (CURRENT IMPLEMENTATION)
+
+- Use weekly partitions by extracting the ISO week:
+
+```sql
+CREATE OR REPLACE TABLE `your_project.your_dataset.your_table`
+PARTITION BY TIMESTAMP_TRUNC(timestamp_column, WEEK)
+AS SELECT * FROM `your_project.your_dataset.source_table`;
+```
+
+- For monthly partitions:
+
+```sql
+CREATE OR REPLACE TABLE `your_project.your_dataset.your_table`
+PARTITION BY TIMESTAMP_TRUNC(timestamp_column, MONTH)
+AS SELECT * FROM `your_project.your_dataset.source_table`;
+```
+
+### 2️⃣ SQL Transformations
+
+You can optimize queries by precomputing some aggregations:
+
+```sql
+CREATE OR REPLACE TABLE `your_project.your_dataset.transformed_table` AS
+SELECT
+  plant_id,
+  TIMESTAMP_TRUNC(timestamp_column, WEEK) AS week_start,
+  AVG(temperature) AS avg_temp,
+  AVG(humidity) AS avg_humidity,
+  COUNT(*) AS data_points
+FROM `your_project.your_dataset.your_table`
+GROUP BY plant_id, week_start;
+```
+
+
 
 ---
 
