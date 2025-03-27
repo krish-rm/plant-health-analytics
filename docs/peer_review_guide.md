@@ -73,7 +73,7 @@
 - Open the Cloud Run dashboard URL and verify:
   - It loads correctly.
   - Both tiles are functional and display meaningful data.
-  - Dropdown filters (time period & plant health status) work as expected.
+  - Dropdown filters (time period & plant id selection) work as expected.
 
   <p align="center">
     <img src="dashboard_1.png" alt="" width="800">
