@@ -38,3 +38,6 @@ For detailed deployment steps, refer to [Deployment Guide](docs/deployment_guide
 
 **This project provides a scalable and automated system for plant health monitoring using cloud-based data analytics and visualization.**
 
+## **Peer review guide**
+The peer reviewers can refer to this guide for evaluation purpose [Peer review guide](docs/peer_review_guide.md).
+
