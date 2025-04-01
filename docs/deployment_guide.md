@@ -60,9 +60,9 @@ gsutil cp src/automation/airflow_dag.py gs://<BUCKET_NAME>/dags/
 Also, upload the related scripts for the DAG (such as `ingest_pipeline.py`, `clean_transform.py`, and `move_to_bigquery.py`), as they will be used in the DAG tasks:
 
 ```sh
-gsutil cp src/automation/ingest_pipeline.py gs://<BUCKET_NAME>/dags/
-gsutil cp src/automation/clean_transform.py gs://<BUCKET_NAME>/dags/
-gsutil cp src/automation/move_to_bigquery.py gs://<BUCKET_NAME>/dags/
+gsutil cp src/ingestion/ingest_pipeline.py gs://<BUCKET_NAME>/dags/
+gsutil cp src/processing/clean_transform.py gs://<BUCKET_NAME>/dags/
+gsutil cp src/processing/move_to_bigquery.py gs://<BUCKET_NAME>/dags/
 ```
 
 Find the Airflow UI URL:
