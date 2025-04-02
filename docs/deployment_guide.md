@@ -203,9 +203,7 @@ gcloud beta run services add-iam-policy-binding --region=us-central1 --member=al
 
 Your **Plant Health Dashboard** is now live at:
 
-```bash
 https://plant-health-dashboard-703716144022.us-central1.run.app/
-```
 
 And updates automatically with new sensor data!
 
