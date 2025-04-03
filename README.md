@@ -82,3 +82,9 @@ For detailed deployment steps, refer to [Deployment Guide](docs/deployment_guide
 ## **Peer review guide**
 The peer reviewers can refer to this guide for evaluation purpose [Peer review guide](docs/peer_review_guide.md).
 
+## Data source 
+Kaggle : https://www.kaggle.com/datasets/ziya07/plant-health-data
+
+## Dashboard
+Cloud build url is live at : https://plant-health-dashboard-703716144022.us-central1.run.app/
+
